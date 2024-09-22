@@ -120,4 +120,5 @@ Lastly, in terms of Hometown. Takers from Luzon received higher marks in compari
 Version History:
 
 1.1 Updated README file
+
 1.2 Added the visualization
