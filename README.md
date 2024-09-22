@@ -98,6 +98,15 @@ The output:
 | S17  | Microelectronics  | 79          | 70.50   |
 | S20  | Communication     | 60          | 66.50   |
 
+
+Problem 2:
+
+Create a visualization that shows how the different features contributes to average grade. Does
+chosen track in college, gender, or hometown contributes to a higher average score?
+
+In terms of Track, Microelectronics tend to get a higher mark, followed by communications and lastly by Instrumentation. Basing on "Gender", females tend to have a higher mark in comparison to the Male takers.
+
+Lastly, in terms of Hometown. Takers from Luzon received higher marks in comparison to Visayas, with the least being Mindanao. 
 Version History:
 
 1.1 Updated README file
