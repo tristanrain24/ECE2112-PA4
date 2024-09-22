@@ -27,3 +27,37 @@ import matplotlib.pyplot as plt
 <p align="center"> ECE BOARD EXAM PROBLEM
 </p>  
 
+Before we start with this problem, we'll import the pandas library using the syntax ```import pandas as np```
+
+In this porblem we are required to import a data frame that's in a form of an excel file. We use the syntax ```pd.read_excel()``` in order for us to read the data frame imported alongside our Programming Assignment file. 
+
+Part A:  Instru = [“Name”, “GEAS”, “Electronics >70”]; where track is constant as
+Instrumentation and hometown Luzon.
+
+In this problem, we'll utilize the ```.loc()``` syntax, which is a label based syntax that will help us locate the Track and Hometown that's required in this problem.
+
+Our code should look as the following:
+```
+instru = board.loc[(board['Track'] == 'Instrumentation') & (board['Hometown'] == 'Luzon') & 
+        (board['Electronics'] > 70), ['Name', 'GEAS', 'Electronics']].reset_index(drop=1)
+```
+```board.loc[(board['Track'] == 'Instrumentation')``` locates "Instrumentation" within the column "Track"
+
+The ```&``` adds the condition ```(board['Hometown'] == 'Luzon')```  which locates the rows which has "Luzon"
+
+Adding another condition, ```(board['Electronics'] > 70)``` That locates the marks greater than 70 within the column "Electronics"
+
+
+Running this code, displays the output as:
+
+```
+      Name    GEAS	Electronics
+0	S1	75	89
+1	S8	64	81
+2	S30	57	81
+```
+
+
+Version History:
+
+1.1 Updated README file
