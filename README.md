@@ -50,13 +50,53 @@ Adding another condition, ```(board['Electronics'] > 70)``` That locates the mar
 
 Running this code, displays the output as:
 
+
+| Name | GEAS | Electronics |
+|------|------|-------------|
+| S1   | 75   | 89          |
+| S8   | 64   | 81          |
+| S30  | 57   | 81          |
+
+
+
+Part B is a similar problem to part A, but this instance requires us to take the average mark of every taker.
+
+In order to take the average mark across all subjects, we use the syntax ```df.mean()```
+
+The complete version of this code is:
+
 ```
-      Name    GEAS	Electronics
-0	S1	75	89
-1	S8	64	81
-2	S30	57	81
+board['Average'] = board[['Math','Electronics', 'GEAS', 'Communication']].mean(axis=1)
 ```
 
+```board['Average']``` creates another column for us to indicate the average mark of each taker.
+
+```.mean(axis=1)``` "axis = 1" is a parameter that specifies that the mean function should be applied horizontally.
+
+```
+mindy = board.loc[(board['Gender'] == 'Female') & (board['Hometown'] == 'Mindanao') & 
+        (board['Average'] >= 55), ['Name', 'Track', 'Electronics', 'Average']].reset_index(drop=1)
+```
+The rest of the code is similar to problem A. But with the addition of syntax ```.reset_index(drop=1)```. This syntax resets the index of the data frame and "drop=1" ensures that the original index is not added as a new column.
+
+Our completed code should look the following:
+
+```
+board['Average'] = board[['Math','Electronics', 'GEAS', 'Communication']].mean(axis=1)
+
+mindy = board.loc[(board['Gender'] == 'Female') & (board['Hometown'] == 'Mindanao') & 
+        (board['Average'] >= 55), ['Name', 'Track', 'Electronics', 'Average']].reset_index(drop=1)
+```
+
+The output:
+
+| Name | Track            | Electronics | Average |
+|------|------------------|-------------|---------|
+| S2   | Communication    | 75          | 67.25   |
+| S3   | Instrumentation   | 74          | 72.75   |
+| S15  | Microelectronics  | 41          | 59.00   |
+| S17  | Microelectronics  | 79          | 70.50   |
+| S20  | Communication     | 60          | 66.50   |
 
 Version History:
 
